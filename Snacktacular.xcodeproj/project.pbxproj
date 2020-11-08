@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A037A3125576E1500DC46F9 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A037A3025576E1500DC46F9 /* Review.swift */; };
+		0A037A332557747100DC46F9 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A037A322557747100DC46F9 /* Reviews.swift */; };
+		0A037A35255893BD00DC46F9 /* SpotReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A037A34255893BD00DC46F9 /* SpotReviewTableViewCell.swift */; };
 		0A10336F2549E7A000057161 /* SpotsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10336E2549E7A000057161 /* SpotsListViewController.swift */; };
 		0A1033712549EB1000057161 /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1033702549EB1000057161 /* SpotTableViewCell.swift */; };
 		0A1033732549F0CD00057161 /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1033722549F0CD00057161 /* SpotDetailViewController.swift */; };
+		0A1D88572555BF7300E2E0E6 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D88562555BF7300E2E0E6 /* ReviewTableViewController.swift */; };
+		0A9A34CF25506C6300843B37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A9A34CE25506C6300843B37 /* GoogleService-Info.plist */; };
 		0AB51D152548B9400039BAD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB51D142548B9400039BAD2 /* AppDelegate.swift */; };
 		0AB51D172548B9400039BAD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB51D162548B9400039BAD2 /* SceneDelegate.swift */; };
 		0AB51D192548B9400039BAD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB51D182548B9400039BAD2 /* LoginViewController.swift */; };
@@ -18,16 +23,20 @@
 		0AB51D212548B9420039BAD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB51D1F2548B9420039BAD2 /* LaunchScreen.storyboard */; };
 		0ABFFED0254C997A00E95F2F /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFFECF254C997900E95F2F /* Spots.swift */; };
 		0ABFFED2254F13E700E95F2F /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABFFED1254F13E700E95F2F /* APIKeys.swift */; };
-		0ABFFED4254FA06400E95F2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ABFFED3254FA06400E95F2F /* GoogleService-Info.plist */; };
 		0ACDDE2F254B881B009E19D0 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDDE2E254B881B009E19D0 /* Spot.swift */; };
 		0ACDDE31254B9E01009E19D0 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACDDE30254B9E01009E19D0 /* UIViewController+alert.swift */; };
 		F0B2C5D0B61C16EB10A03876 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE98349C0F490C5C9003A36 /* Pods_Snacktacular.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A037A3025576E1500DC46F9 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		0A037A322557747100DC46F9 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		0A037A34255893BD00DC46F9 /* SpotReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotReviewTableViewCell.swift; sourceTree = "<group>"; };
 		0A10336E2549E7A000057161 /* SpotsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsListViewController.swift; sourceTree = "<group>"; };
 		0A1033702549EB1000057161 /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
 		0A1033722549F0CD00057161 /* SpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
+		0A1D88562555BF7300E2E0E6 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
+		0A9A34CE25506C6300843B37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0AB51D112548B9400039BAD2 /* Snacktacular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snacktacular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB51D142548B9400039BAD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB51D162548B9400039BAD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +47,6 @@
 		0AB51D222548B9420039BAD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ABFFECF254C997900E95F2F /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		0ABFFED1254F13E700E95F2F /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
-		0ABFFED3254FA06400E95F2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0ACDDE2E254B881B009E19D0 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		0ACDDE30254B9E01009E19D0 /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		0DE98349C0F490C5C9003A36 /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,17 +90,21 @@
 				0AB51D142548B9400039BAD2 /* AppDelegate.swift */,
 				0AB51D162548B9400039BAD2 /* SceneDelegate.swift */,
 				0ACDDE2E254B881B009E19D0 /* Spot.swift */,
+				0A037A3025576E1500DC46F9 /* Review.swift */,
+				0A037A322557747100DC46F9 /* Reviews.swift */,
 				0ABFFECF254C997900E95F2F /* Spots.swift */,
 				0AB51D182548B9400039BAD2 /* LoginViewController.swift */,
 				0A10336E2549E7A000057161 /* SpotsListViewController.swift */,
 				0A1033722549F0CD00057161 /* SpotDetailViewController.swift */,
+				0A037A34255893BD00DC46F9 /* SpotReviewTableViewCell.swift */,
+				0A1D88562555BF7300E2E0E6 /* ReviewTableViewController.swift */,
 				0A1033702549EB1000057161 /* SpotTableViewCell.swift */,
 				0ACDDE30254B9E01009E19D0 /* UIViewController+alert.swift */,
 				0ABFFED1254F13E700E95F2F /* APIKeys.swift */,
 				0AB51D1A2548B9400039BAD2 /* Main.storyboard */,
 				0AB51D1D2548B9420039BAD2 /* Assets.xcassets */,
 				0AB51D1F2548B9420039BAD2 /* LaunchScreen.storyboard */,
-				0ABFFED3254FA06400E95F2F /* GoogleService-Info.plist */,
+				0A9A34CE25506C6300843B37 /* GoogleService-Info.plist */,
 				0AB51D222548B9420039BAD2 /* Info.plist */,
 			);
 			path = Snacktacular;
@@ -177,7 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB51D212548B9420039BAD2 /* LaunchScreen.storyboard in Resources */,
-				0ABFFED4254FA06400E95F2F /* GoogleService-Info.plist in Resources */,
+				0A9A34CF25506C6300843B37 /* GoogleService-Info.plist in Resources */,
 				0AB51D1E2548B9420039BAD2 /* Assets.xcassets in Resources */,
 				0AB51D1C2548B9400039BAD2 /* Main.storyboard in Resources */,
 			);
@@ -249,12 +261,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A037A332557747100DC46F9 /* Reviews.swift in Sources */,
 				0A10336F2549E7A000057161 /* SpotsListViewController.swift in Sources */,
 				0AB51D192548B9400039BAD2 /* LoginViewController.swift in Sources */,
 				0AB51D152548B9400039BAD2 /* AppDelegate.swift in Sources */,
 				0A1033732549F0CD00057161 /* SpotDetailViewController.swift in Sources */,
+				0A1D88572555BF7300E2E0E6 /* ReviewTableViewController.swift in Sources */,
+				0A037A3125576E1500DC46F9 /* Review.swift in Sources */,
 				0ABFFED0254C997A00E95F2F /* Spots.swift in Sources */,
 				0A1033712549EB1000057161 /* SpotTableViewCell.swift in Sources */,
+				0A037A35255893BD00DC46F9 /* SpotReviewTableViewCell.swift in Sources */,
 				0ABFFED2254F13E700E95F2F /* APIKeys.swift in Sources */,
 				0ACDDE2F254B881B009E19D0 /* Spot.swift in Sources */,
 				0AB51D172548B9400039BAD2 /* SceneDelegate.swift in Sources */,
