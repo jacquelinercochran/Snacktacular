@@ -17,7 +17,7 @@ class SpotPhotoCollectionViewCell: UICollectionViewCell {
         didSet{
             if let url = URL(string: self.photo.photoURL) {
                 self.photoImageView.sd_imageTransition = .fade
-                self.photoImageView.sd_imageTransition?.duration = 0.5
+                self.photoImageView.sd_imageTransition?.duration = 0.2
                 self.photoImageView.sd_setImage(with: url)
             }else{
                 print("URL didn't work \(self.photo.photoURL)")

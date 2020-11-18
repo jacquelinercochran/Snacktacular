@@ -57,23 +57,25 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: FUIAuthDelegate {
-//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-//        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
-//        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false{
-//            return true
-//        }
-//        return false
-//    }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as! String?
+        if FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: sourceApplication) ?? false{
+            return true
+        }
+        return false
+    }
 //
-//    private func authUI(_ authUI: FUIAuth, didSignInWith user: user?, error: Error?) {
-//        guard error == nil else {
-//            print("ERROR: during signin \(error!.localizedDescription)")
-//            return
-//        }
-//        if let user = user {
-//            print("We signed in with user \(user.email ?? "unknown e-mail")")
-//        }
-//    }
+    internal func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        guard error == nil else {
+            print("ERROR: during signin \(error!.localizedDescription)")
+            return
+        }
+        if let user = user {
+            print("We signed in with user \(user.email ?? "unknown e-mail")")
+        }
+    }
+    
+    
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
         let marginInsets: CGFloat = 16.0 // amount to indent UIImageView on each side
         let topSafeArea = self.view.safeAreaInsets.top

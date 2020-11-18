@@ -52,7 +52,7 @@ class Spot: NSObject, MKAnnotation{
         
     }
     
-    convenience override init(){
+    override convenience init(){
         self.init(name: "", address: "", coordinate: CLLocationCoordinate2D(),averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: "")
     }
     
@@ -87,13 +87,14 @@ class Spot: NSObject, MKAnnotation{
                     return completion(false)
                 }
                 self.documentID = ref!.documentID
-                print("Added a document: \(self.documentID)") //it works!
+                print("Added a document: \(self.documentID)")
+                completion(true)//it works!
             }
         }else { //else save to the existing documentID with setData
             let ref = db.collection("spots").document(self.documentID)
             ref.setData(dataToSave) { (error) in
                 guard error == nil else{
-                    print("ERROR: updating document \(error?.localizedDescription)")
+                    print("ERROR: updating document \(error!.localizedDescription)")
                     return completion(false)
                 }
                 print("Updated document: \(self.documentID)")
@@ -122,7 +123,7 @@ class Spot: NSObject, MKAnnotation{
             self.numberOfReviews = querySnapshot!.count
             let dataToSave = self.dictionary // create dictionary with latest values
             let spotRef = db.collection("spots").document(self.documentID)
-            spotRef.setData(dataToSave) { (erro) in
+            spotRef.setData(dataToSave) { (error) in
                 if let error = error {
                     print("ERROR: updating document \(self.documentID) in spot after changing averageReview and numberOfReviews info \(error.localizedDescription)")
                     completed()

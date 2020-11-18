@@ -45,7 +45,7 @@ class SpotDetailViewController: UIViewController {
         collectionView.dataSource = self
         imagePickerController.delegate = self
         
-        
+        getLocation()
         if  spot == nil{
             spot = Spot()
         }else{
@@ -59,7 +59,6 @@ class SpotDetailViewController: UIViewController {
         reviews = Reviews()
         photos = Photos()
         updateUserInterface()
-        getLocation()
         // Do any additional setup after loading the view.
     }
     
@@ -158,13 +157,9 @@ class SpotDetailViewController: UIViewController {
                 self.cancelButton.hide()
                 self.navigationController?.setToolbarHidden(true, animated: true)
                 self.disableTextEditing()
-                if segueIdentifier == "AddReview"{
-                    self.performSegue(withIdentifier: segueIdentifier, sender: nil)
-                }else{
-                    self.cameraOrLibraryAlert()
+                self.performSegue(withIdentifier: segueIdentifier, sender: nil)
                 }
             }
-        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
@@ -185,7 +180,7 @@ class SpotDetailViewController: UIViewController {
     func cameraOrLibraryAlert() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { (_) in
-                self.accessPhotoLibrary()
+            self.accessPhotoLibrary()
         }
 
         let cameraAction = UIAlertAction(title: "Camera", style: .default) { (_) in
@@ -194,9 +189,9 @@ class SpotDetailViewController: UIViewController {
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-            alertController.addAction(photoLibraryAction)
-            alertController.addAction(cameraAction)
-            alertController.addAction(cancelAction)
+        alertController.addAction(photoLibraryAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
 
         }
@@ -223,7 +218,6 @@ class SpotDetailViewController: UIViewController {
                 self.oneButtonAlert(title: "Save Failed", message: "For some reason, the data would not save to the cloud")
             }
         }
-        leaveViewController()
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -275,7 +269,7 @@ extension SpotDetailViewController: GMSAutocompleteViewControllerDelegate {
 
   // User canceled the operation.
   func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-    dismiss(animated: true, completion: nil)
+//    dismiss(animated: true, completion: nil)
   }
 
   // Turn the network activity indicator on and off again.
@@ -374,10 +368,12 @@ extension SpotDetailViewController: CLLocationManagerDelegate{
             self.updateUserInterface()
         }
     }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         //deal with error
         print("ERROR: \(error.localizedDescription). Failed to get device locatioon")
     }
+    
 }
 
 extension SpotDetailViewController: UITableViewDelegate, UITableViewDataSource{

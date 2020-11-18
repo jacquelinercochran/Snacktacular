@@ -58,7 +58,7 @@ class PhotoViewController: UIViewController {
         if photo.documentID == ""{//This is a new review
             addBordersToEditableObjects()
         }else{
-            if photo.photoUserID == Auth.auth().currentUser?.uid{
+            if photo.photoUserID == Auth.auth().currentUser?.uid {
                 //Review posted by current user
                 self.navigationItem.leftItemsSupplementBackButton = false
                 saveBarButton.title = "Update"

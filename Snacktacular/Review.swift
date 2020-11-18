@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-import MapKit
 
 class Review {
     var title: String
@@ -23,7 +22,7 @@ class Review {
     var dictionary: [String: Any]{
         //make date type conversion so firebase can store it
         let timeIntervalDate = date.timeIntervalSince1970
-        return["title": title, "text": text, "rating": rating, "reviewUserID": reviewUserID, "reviewUserEmail": reviewUserEmail, "date": timeIntervalDate, "documentID": documentID]
+        return["title": title, "text": text, "rating": rating, "reviewUserID": reviewUserID, "reviewUserEmail": reviewUserEmail, "date": timeIntervalDate]
     }
     
    //base initializer
@@ -41,7 +40,7 @@ class Review {
     //convenience initializer
     convenience init(){
         let reviewUserID = Auth.auth().currentUser?.uid ?? ""
-        let reviewUserEmail = Auth.auth().currentUser?.email ?? ""
+        let reviewUserEmail = Auth.auth().currentUser?.email ?? "unknown email"
         self.init(title: "", text: "", rating: 0, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date: Date(), documentID: "")
     }
     
@@ -60,6 +59,40 @@ class Review {
         self.init(title: title, text: text, rating: rating, reviewUserID: reviewUserID, reviewUserEmail: reviewUserEmail, date: date, documentID: documentID)
     }
     
+    func saveData(spot: Spot, completion: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        // Create the dictionary representing data we want to save
+        let dataToSave: [String: Any] = self.dictionary
+        // if we HAVE saved a record, we'll have an ID, otherwise .addDocument will create one.
+        if self.documentID == "" { // Create a new document via .addDocument
+            var ref: DocumentReference? = nil // Firestore will create a new ID for us
+            ref = db.collection("spots").document(spot.documentID).collection("reviews").addDocument(data: dataToSave){ (error) in
+                guard error == nil else {
+                    print("😡 ERROR: adding document \(error!.localizedDescription)")
+                    return completion(false)
+                }
+                self.documentID = ref!.documentID
+                print("💨 Added document: \(self.documentID) to spot: \(spot.documentID)") // It worked!
+                spot.updateAverageRating {
+                    completion(true)
+                }
+            }
+        } else { // else save to the existing documentID w/.setData
+            let ref = db.collection("spots").document(spot.documentID).collection("reviews").document(self.documentID)
+            ref.setData(dataToSave) { (error) in
+                guard error == nil else {
+                    print("😡 ERROR: updating document \(error!.localizedDescription)")
+                    return completion(false)
+                }
+                print("💨 Updated document: \(self.documentID) in spot: \(spot.documentID)") // It worked!
+                spot.updateAverageRating {
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    
     
     func deleteData(spot: Spot, completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
@@ -76,42 +109,8 @@ class Review {
         }
     }
     
-    
-    
-    
-    
-    func saveData(spot: Spot, completion: @escaping (Bool) -> ()) {
-            let db = Firestore.firestore()
-            //Create the dictionary representing data we want to save
-            let dataToSave: [String: Any] = self.dictionary
-            //if we have a saved record, well have an ID, otherwise .addDocument will create one
-            if self.documentID == "" { //Create a new document via .addDocument
-                var ref: DocumentReference? = nil //firestore will create a new ID for us
-                ref = db.collection("spots").document(spot.documentID).collection("reviews").addDocument(data: dataToSave){ (error) in
-                    guard error == nil else{
-                        print("ERROR: adding document \(error?.localizedDescription)")
-                        return completion(false)
-                    }
-                    self.documentID = ref!.documentID
-                    print("Added a document: \(self.documentID)")
-                    spot.updateAverageRating {
-                        completion(true)
-                    }
-                }
-            }else { //else save to the existing documentID with setData
-                let ref = db.collection("spots").document(spot.documentID).collection("reviews").document(self.documentID)
-                ref.setData(dataToSave) { (error) in
-                    guard error == nil else{
-                        print("ERROR: updating document \(error?.localizedDescription)")
-                        return completion(false)
-                    }
-                    print("Updated document: \(self.documentID)")
-                    spot.updateAverageRating {
-                        completion(true)
-                    }
-            }
-        }
-        
-    }
-
 }
+    
+    
+    
+    

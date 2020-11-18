@@ -22,8 +22,8 @@ class Photo {
     
     var dictionary: [String: Any]{
            //make date type conversion so firebase can store it
-           let timeIntervalDate = date.timeIntervalSince1970
-        return["image":image, "description":description, "photoUserID":photoUserID, "photoUserEmail":photoUserEmail, "date": timeIntervalDate, "photoURL":photoURL, "documentID":documentID]
+        let timeIntervalDate = date.timeIntervalSince1970
+        return["description":description, "photoUserID":photoUserID, "photoUserEmail":photoUserEmail, "date": timeIntervalDate, "photoURL":photoURL]
        }
        
       //base initializer
@@ -43,13 +43,13 @@ class Photo {
        convenience init(){
            let photoUserID = Auth.auth().currentUser?.uid ?? ""
            let photoUserEmail = Auth.auth().currentUser?.email ?? "unknown email"
-        self.init(image: UIImage() , description: "", photoUserID: photoUserID, photoUserEmail: photoUserEmail, date: Date(), photoURL: "", documentID: "")
+            self.init(image: UIImage() , description: "", photoUserID: photoUserID, photoUserEmail: photoUserEmail, date: Date(), photoURL: "", documentID: "")
        }
        
     
        convenience init(dictionary: [String: Any]){
            //downcasts dictionary value to types we need
-           let description = dictionary["text"] as! String? ?? ""
+           let description = dictionary["description"] as! String? ?? ""
            let photoUserID = dictionary["photoUserID"] as! String? ?? ""
            let photoUserEmail = dictionary["photoUserEmail"] as! String? ?? ""
            let timeIntervalDate = dictionary["date"] as! TimeInterval? ?? TimeInterval()
