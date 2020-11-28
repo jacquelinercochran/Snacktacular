@@ -26,7 +26,7 @@ class Reviews {
         }
         db.collection("spots").document(spot.documentID).collection("reviews").addSnapshotListener { (querySnapshot, error) in
             guard error == nil else {
-                print("ERROR: adding the snapshot listener \(error!.localizedDescription)")
+                print("ERROR adding the snapshot listener \(error!.localizedDescription)")
                 return completed()
             }
             self.reviewArray = [] //clean out existing spotArray since new data will load

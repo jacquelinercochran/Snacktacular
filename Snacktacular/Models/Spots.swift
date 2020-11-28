@@ -20,7 +20,7 @@ class Spots{
     func loadData(completed: @escaping () -> ()) {
         db.collection("spots").addSnapshotListener { (querySnapshot, error) in
             guard error == nil else {
-                print("ERROR: adding the snapshot listener \(error!.localizedDescription)")
+                print("ERROR adding the snapshot listener \(error!.localizedDescription)")
                 return completed()
             }
             self.spotArray = [] //clean out existing spotArray since new data will load

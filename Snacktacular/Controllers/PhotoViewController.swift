@@ -121,7 +121,7 @@ class PhotoViewController: UIViewController {
             if success {
                 self.leaveViewController()
             }else{
-                print("ERROR: Can't unwind segue from PhotoViewController because of photo saving error")
+                print("ERROR: Cannot unwind segue from PhotoViewController because of photo saving error")
             }
         }
     }

@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                 if success{
                     self.performSegue(withIdentifier: "FirstShowSegue", sender: nil)
                 }else{
-                    print("ERROR")
+                    print("ERROR!")
                 }
             }
         }

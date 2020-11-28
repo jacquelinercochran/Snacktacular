@@ -51,7 +51,7 @@ class ReviewTableViewController: UITableViewController {
         self.view.addGestureRecognizer(tap)
         
         guard spot != nil else{
-            print("ERROR: No spot passed to ReviewTableViewController.swift")
+            print("ERROR: No spot was passed to ReviewTableViewController.swift")
             return
         }
         if review == nil{

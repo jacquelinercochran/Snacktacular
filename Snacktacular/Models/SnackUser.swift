@@ -60,7 +60,7 @@ class SnackUser{
             let dataToSave: [String: Any] = self.dictionary
             db.collection("users").document(self.documentID).setData(dataToSave) { (error) in
                 guard error == nil else {
-                    print("ERROR: \(error?.localizedDescription)")
+                    print("ERROR \(error?.localizedDescription)")
                     return completion(false)
                 }
                 return completion(true)

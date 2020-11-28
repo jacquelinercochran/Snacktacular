@@ -162,7 +162,7 @@ class Photo {
     
     private func deleteImage(spot: Spot){
         guard spot.documentID != "" else {
-            print("ERROR: did not pass a vaild spot into deleteImage")
+            print("ERROR did not pass a vaild spot into deleteImage")
             return
         }
         let storage = Storage.storage()

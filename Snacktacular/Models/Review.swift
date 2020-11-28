@@ -101,7 +101,7 @@ class Review {
                 print("Error: deleting review documentID \(self.documentID) Error: \(error.localizedDescription)")
                 completion(false)
             }else{
-                print("Successfullt delete document \(self.documentID)")
+                print("Successfully delete document \(self.documentID)")
                 spot.updateAverageRating {
                     completion(true)
                 }

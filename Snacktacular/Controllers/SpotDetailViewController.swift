@@ -136,7 +136,7 @@ class SpotDetailViewController: UIViewController {
            case "ShowPhoto":
                 let destination = segue.destination as! PhotoViewController
                 guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else{
-                    print("ERROR: couldn't get selected collectionView item")
+                    print("ERROR: could not get selected collectionView item")
                     return
                 }
                 destination.photo = photos.photoArray[selectedIndexPath.row]

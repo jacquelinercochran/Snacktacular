@@ -26,7 +26,7 @@ class Photos {
         }
         db.collection("spots").document(spot.documentID).collection("photos").addSnapshotListener { (querySnapshot, error) in
             guard error == nil else {
-                print("ERROR: adding the snapshot listener \(error!.localizedDescription)")
+                print("ERROR adding the snapshot listener \(error!.localizedDescription)")
                 return completed()
             }
             self.photoArray = [] //clean out existing spotArray since new data will load

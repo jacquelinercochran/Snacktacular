@@ -68,7 +68,7 @@ class SpotsListViewController: UIViewController {
         case 2: //avg rating
             spots.spotArray.sort(by: {$0.averageRating > $1.averageRating})
         default:
-            print("HEY! You shouldn't have gotten here. Check out the segmented control for an error!")
+            print("HEY! You should not have gotten here. Check out the segmented control for an error!")
         }
         tableView.reloadData()
     }
